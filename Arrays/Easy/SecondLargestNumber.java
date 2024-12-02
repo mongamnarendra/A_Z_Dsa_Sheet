@@ -7,21 +7,20 @@ public class SecondLargestNumber {
     private static int getSecondMaxOptimized(int[] a)
     {
         int max=a[0];
+        int prev=-1;
         for(int i:a)
         {
             if(i>max)
             {
+                prev=max;
                 max=i;
             }
-        }
-        int prev=-1;
-        for(int i:a)
-        {
             if(i!=max && prev<i)
             {
                 prev=i;
             }
         }
+
         return prev;
     }
 
